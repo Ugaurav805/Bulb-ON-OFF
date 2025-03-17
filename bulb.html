@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light Bulb</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the content horizontally */
+            font-family: sans-serif;
+            background-color: #ffffff; /* Light background color */
+        }
+
+        h2 {
+            margin-bottom: 20px; /* Space below the heading */
+            color: #f23f3f; /* Dark text color */
+        }
+
+        ul {
+            list-style-type: none; /* Remove the bullet points */
+            padding: 0; /* Remove the default padding */
+        }
+
+        .container {
+            color: #333;
+            text-align: center;
+        }
+
+        h1.title {
+            text-transform: uppercase;
+            margin-bottom: 20px; /* Space below the title */
+            color: #27ae60; /* Green color for the title */
+        }
+
+        img {
+            width: 200px; /* Set a fixed width for the bulb image */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: transform 0.2s; /* Smooth transition for scaling */
+        }
+
+        img:hover {
+            transform: scale(1.1); /* Slightly enlarge the image on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Click the bulb to turn it on or off</h1>
+        <img src="lightoff.jpg" alt="Light Bulb Off" id="lightbulb" onclick="bulbToggle()" />
+        <h2>What can a bulb do?</h2>
+        <ul>
+            <li>A light bulb produces light from electricity.</li>
+            <li>The bulb is designed to charge even during normal operation when it is turned on.</li>
+            <li>A bulb can light up the room.</li>
+            <li>A bulb can be used as a decoration.</li>
+            <li>A bulb can be used as a signal.</li>
+            <li>A bulb can be used as a light source.</li>
+            <li>A bulb can be used as a light source for a camera.</li>
+        </ul>
+    </div>
+    <script>
+        function bulbToggle() {
+            let bulb = document.getElementById("lightbulb");
+            if (bulb.src.match("lightoff")) {
+                bulb.src = "lighton.jpg";
+            } else {
+                bulb.src = "lightoff.jpg";
+            }
+        }
+    </script>
+</body>
+</html>
